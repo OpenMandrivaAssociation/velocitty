@@ -1,6 +1,6 @@
 Name:		velocitty
 Version:	1.0.4
-Release:	2
+Release:	3
 Summary:	Terminal emulator for Linux desktops.  An easy-to-use terminal emulator.
 License:        GPL-3+,MIT
 URL:            https://github.com/xapp-project/velocitty
@@ -11,17 +11,17 @@ Group:		Graphical desktop/Other
 BuildSystem:    meson
 
 BuildRequires:  gettext
-BuildRequires:  lib64glib2.0-devel
-BuildRequires:  lib64gio-gir2.0
-BuildRequires:  lib64gtk4_1
+BuildRequires:  pkgconfig(glib-2.0)
+BuildRequires:  typelib(Gio)
+BuildRequires:  pkgconfig(gtk4)
 BuildRequires:  meson
 BuildRequires:  pkgconfig
 BuildRequires:  python
 
-Requires:	lib64adwaita-gir
+Requires:	typelib(Adw)
 Requires:       xapp-symbolic-icons
-Requires:	lib64gtk-gir4.0
-Requires:	lib64vte-gir3.91
+Requires:	typelib(Gtk)
+Requires:	typelib(Vte)
 Requires:       python
 Requires:       python-gi
 Requires:       python-setproctitle
