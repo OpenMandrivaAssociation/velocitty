@@ -1,5 +1,5 @@
 Name:		velocitty
-Version:	1.0.8
+Version:	1.0.9
 Release:	1
 Summary:	Terminal emulator for Linux desktops.  An easy-to-use terminal emulator.
 License:        GPL-3+,MIT
@@ -34,7 +34,15 @@ Terminal emulator for Linux desktops.  An easy-to-use terminal emulator.
 %prep
 %autosetup -p1
 
-%files
+%build
+%meson_build
+ 
+%install
+%meson_install
+
+%find_lang %{name}
+
+%files -f %{name}.lang
 %license LICENSES/*
 %doc README.md
 %{_bindir}/velocitty
